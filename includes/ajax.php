@@ -1,13 +1,13 @@
-
+ 
 <?php
 
 function ajaxsubstriptionplan_callback(){
    
-  $language = apply_filters( 'wpml_current_language', null );
+//   $language = apply_filters( 'wpml_current_language', null );
                          
   $country_id = sanitize_text_field( $_POST['country']);
-  $state_id = sanitize_text_field( $_POST['state']);
-    
+  $state_id = sanitize_text_field( $_POST['state']); 
+  $language = sanitize_text_field( $_POST['language']); 
   $stateinfo =  ux_select_unique('state_translations',$state_id); 
   $countryinfo =  ux_select_unique('country_translations',$country_id); 
   $langue = $countryinfo[0]->language_code;
@@ -94,7 +94,9 @@ function substriptionplan_check(){
   $country_id = sanitize_text_field( $_POST['country_id']);
     
   $listestate =  ux_select_all_country($country_id); 
-  $language = apply_filters( 'wpml_current_language', null );
+//   $language = apply_filters( 'wpml_current_language', null ); 
+  $language = sanitize_text_field( $_POST['language']); 
+ 
   if($language == 'fr'){
       ob_start();
       ?>
@@ -132,3 +134,11 @@ function substriptionplan_check(){
 }
 add_action( 'wp_ajax_nopriv_ajaxsubstriptioncheck', 'substriptionplan_check' );
  add_action( 'wp_ajax_ajaxsubstriptioncheck', 'substriptionplan_check' );
+
+
+  
+
+  
+  
+  
+  

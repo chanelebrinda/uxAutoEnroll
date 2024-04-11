@@ -1,12 +1,5 @@
 
 
-
-
-
- 
-
- 
-
 .card {
   border:none;
   /* padding: 10px 10px; */
@@ -229,7 +222,7 @@ button.active {
   margin: 0rem 1rem;
   position: relative;
   display: inline-block;
-  width: 6rem;
+  width: 4.5rem;
   height: 2rem;
 }
 
@@ -270,7 +263,7 @@ transition: all 0.3s;
 background-color: #6a4d93;
 } */
 input:checked+.roundbutton:before {
-  transform: translate(3.7em, 0);
+  transform: translate(2.4em, 0);
 }
 
 .span {
@@ -569,19 +562,46 @@ border: 0px solid rgba(0,0,0,.1)!important;
 }
 @media (max-width: 576px){
  
-.ib_pricing__price {
-  height: 200px;
-}  
+    .ib_pricing__price {
+      height: 200px;
+    }  
+     
+      .buttonWrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+    }
+    .ux_subcrition .uxp__checkout .uxp-order-item {
+        padding: 0 50px 50px; 
+    }
+    
+    .ux_subcrition .uxp__checkout .uxp-order-item table tfoot tr.cart-subtotal td {
+        padding: 0 !important;
+    }
+    .ux_subcrition .uxp__checkout .uxp-order-item table tfoot tr.order-total.uxp_order-total th {
+        padding: 10px 0 0px;
+    }
+    .ux_subcrition .uxp__checkout .uxp-order-item .ux_subcrition-checkout-review-order-table tbody td {
+        padding: 0;
+    }
+    .ux_subcrition .uxp__checkout .uxp-order-item .ux_subcrition-checkout-review-order-table tbody tr:last-child td {
+        padding-bottom: 0;
+    }
+    .ux_subcrition .uxp__checkout .uxp-billing-item {
+        padding: 50px 50px 20px; 
+    } 
+    .plans_type.left { 
+        width: 70px; 
+        text-align:right;
+    }
+    .plans_type.right { 
+        width: 70px; 
+         text-align:left;
+    }
  
-  .buttonWrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 20px;
 }
- 
-  }
 
 
 /*****tooltip*******/
@@ -642,12 +662,30 @@ transform: scale(1.8,1) translate(-33%,-50%);
 height: 100%;
 border: 1px solid #e8e8f6;
 }
-
+.ux-btn{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 20px;
+}
 .ux_col_plan ul{
   height: 100%;
   }
-
-  /**************custumiwe swweetallert ********************/
+.ux-btn-primary,.ux-btn-black{
+    color: #fff!important;
+    padding: 10px 20px;
+    border-radius: 0;
+    text-decoration: none!important;
+    font-size: 14px
+ }
+.ux-btn-primary{
+       background-color: #6a4d93;
+}
+.ux-btn-black{
+   background-color: #000;
+}
+  
+    /**************custumiwe swweetallert ********************/
 
   div:where(.swal2-container) div:where(.swal2-popup) {
     border-radius: 0!important; 

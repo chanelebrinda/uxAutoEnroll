@@ -259,6 +259,14 @@ function ux_select_all_country($country_id) {
 
 	$result = $wpdb->get_results ( "SELECT * FROM state_translations
     INNER JOIN state ON state_translations.id = state.id WHERE state.country_id = $country_id"); 
-	return $result; 
+		return $result; 
 	
 }
+
+
+  
+
+
+ 
+ 
+ 

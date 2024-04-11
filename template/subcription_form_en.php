@@ -1,4 +1,5 @@
 
+ 
 <?php
  $id_plan = $_GET['plan_id'];
  $paymentRecurrence = $_GET['paymentRecurrence'];
@@ -15,10 +16,10 @@
      </div>
      
      <style>
-#head-ux-en .elementor-nav-menu__align-end .elementor-nav-menu {    
+#head-ux-en .elementor-nav-menu__align-end .elementor-nav-menu ,#head-ux .elementor-nav-menu__align-end .elementor-nav-menu {    
     display: none; 
 }
-#head-ux-en .elementor-widget-button .elementor-button {
+#head-ux-en .elementor-widget-button .elementor-button ,#head-ux .elementor-widget-button .elementor-button {
      display: none; 
 }
 .button { 
@@ -64,8 +65,8 @@ td{
      </style>
 
 
-        <div class="ux_subcrition">
-          <div class="ux_subcrition-notices-wrapper"></div> 
+    <div class="ux_subcrition">
+      <div class="ux_subcrition-notices-wrapper"></div> 
           <form name="checkout" method="post" class="uxp_subcription_form"
             action="" enctype="multipart/form-data">
               <input type="hidden" value="<?php esc_html_e( $id_plan ) ?>" id="pricePlanId">
@@ -203,7 +204,7 @@ td{
                           </small>
                         </small>
                         </label> 
-                        <div class="d-flex flex-row align-items-center">
+                        <div class="m-0 d-flex flex-row align-items-center">
                              <input type="text" class="form-control" value="" name="uxp_lmsPortalSubdomain" id="uxp_lmsPortalSubdomain" style="height:40px" placeholder="" required>
                              <div class="px-1">.uxpertiselms.com</div>
                         </div>   
@@ -283,7 +284,7 @@ td{
                   </div>
                 </div>
 
-              </div>
+           </div>
               <!-- end checkout order item -->
 
             </div>
@@ -292,3 +293,12 @@ td{
 
     </div>
 </div>
+
+     
+
+ 
+
+ 
+
+ 
+ 

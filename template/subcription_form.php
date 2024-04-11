@@ -15,7 +15,12 @@
 
      <style>
 
-
+#head-ux-en .elementor-nav-menu__align-end .elementor-nav-menu ,#head-ux .elementor-nav-menu__align-end .elementor-nav-menu {    
+    display: none; 
+}
+#head-ux-en .elementor-widget-button .elementor-button ,#head-ux .elementor-widget-button .elementor-button {
+     display: none; 
+}
 
 .button { 
     /* Important part */
@@ -60,15 +65,15 @@ td{
      </style>
 
 
-        <div class="ux_subcrition">
-          <div class="ux_subcrition-notices-wrapper"></div> 
+    <div class="ux_subcrition">
+      <div class="ux_subcrition-notices-wrapper"></div> 
           <form name="checkout" method="post" class="uxp_subcription_form"
             action="" enctype="multipart/form-data">
               <input type="hidden" value="<?php esc_html_e( $id_plan ) ?>" id="pricePlanId">
               <input type="hidden" value="<?php esc_html_e( $paymentRecurrence ) ?>" id="uxp_paymentRecurrence">
               <input type="hidden" value="<?php esc_html_e( $currency ) ?>" id="uxp_currency">
               <input type="hidden" value="<?php esc_html_e( $is_free ) ?>" id="uxp_free">
-              <input type="hidden" value="fr" class="uxp_language">
+              <input type="hidden" value="fr" id="uxp_language">
 
             <!-- checkout page -->
             <div class="uxp__checkout"> 
@@ -277,7 +282,7 @@ td{
 
                   <div id="payment"  >
                      <button type="submit" class="button ib_confirme" 
-                        value="Buy Now" ><?php _e("S’abonner",'ux-autoaenroll')?>
+                        value="Buy Now" ><?php _e("M’abonner",'ux-autoaenroll')?>
                        </button> 
                     </div>
                   </div>
@@ -289,6 +294,17 @@ td{
             </div>
             <!-- end checkout page -->
           </form>
-
+          
     </div>
 </div>
+
+  
+
+
+
+
+  
+  
+
+  
+

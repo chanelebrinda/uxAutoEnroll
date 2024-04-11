@@ -1,5 +1,3 @@
-
-
 <?php
 
     $languageCode = 'en';
@@ -115,20 +113,20 @@ if (strpos($server_url, '?') !== false) {
        <div class="wrapper">
        <div class="buttonWrapper">
           <div class="d-flex flex-row">
-              <div class="plans_type"><?php _e('CAD','ux-autoaenroll') ?></div>
+              <div class="plans_type left"><?php _e('CAD','ux-autoaenroll') ?></div>
               <label class="toggle">
                   <input name="toggleswitch" id="toggleswitch" type="checkbox">
                   <span class="roundbutton"></span>
               </label>
-              <div class="plans_type"><?php _e('USD','ux-autoaenroll') ?></div>
+              <div class="plans_type right"><?php _e('USD','ux-autoaenroll') ?></div>
           </div>
           <div class="d-flex flex-row px-3">
-              <div class="plans_type"><?php _e('Monthly','ux-autoaenroll') ?></div>
+              <div class="plans_type left"><?php _e('Monthly','ux-autoaenroll') ?></div>
               <label class="toggle">
                   <input id="toggleswitch" type="checkbox">
                   <span class="roundbutton"></span>
               </label>
-              <div class="plans_type"><?php _e('Yearly','ux-autoaenroll') ?></div>
+              <div class="plans_type right"><?php _e('Yearly','ux-autoaenroll') ?></div>
           </div>
        </div> 
           <div class="subcontent">
@@ -155,7 +153,7 @@ if (strpos($server_url, '?') !== false) {
                           <div class="contenu">
                             <?php  if($plan->isFreeTrialEnabled == true){ ?>
                               <div class="free">
-                                <span class="ib_pricing__price_val"><?php _e( 'Free','ux-autoaenroll') ?></span>
+                                <span class="ib_pricing__price_val"><?php _e( '30 Days free','ux-autoaenroll') ?></span>
                               </div>
                               <?php }else if($plan->isCustomPlan){?>
                                 <div class="free">
@@ -246,7 +244,7 @@ if (strpos($server_url, '?') !== false) {
                           <div class="contenu">
                           <?php  if($plan->isFreeTrialEnabled == true){ ?>
                                <div class="free">
-                                 <span class="ib_pricing__price_val"><?php _e( 'Free','ux-autoaenroll') ?></span>
+                                 <span class="ib_pricing__price_val"><?php _e( '30 Days free','ux-autoaenroll') ?></span>
                                 </div>
                               <?php }else if($plan->isCustomPlan){?>
                                 <div class="free">
@@ -335,7 +333,7 @@ if (strpos($server_url, '?') !== false) {
                           <div class="contenu">
                             <?php  if($plan->isFreeTrialEnabled == true){ ?>
                               <div class="free">
-                              <span class="ib_pricing__price_val"><?php _e( 'Free','ux-autoaenroll') ?></span>
+                              <span class="ib_pricing__price_val"><?php _e( '30 Days free','ux-autoaenroll') ?></span>
                               </div>
                               <?php }else if($plan->isCustomPlan){?>
                                 <div class="free">
@@ -426,7 +424,7 @@ if (strpos($server_url, '?') !== false) {
                           <div  class="contenu">
                           <?php  if($plan->isFreeTrialEnabled == true){ ?>
                             <div class="free">
-                              <span class="ib_pricing__price_val"><?php _e( 'Free','ux-autoaenroll') ?></span>
+                              <span class="ib_pricing__price_val"><?php _e( '30 Days free','ux-autoaenroll') ?></span>
                               </div>
                               <?php }else if($plan->isCustomPlan){?>
                                 <div class="free">
@@ -496,9 +494,20 @@ if (strpos($server_url, '?') !== false) {
             </div>
           </div>
        </div>
-
-     <?php }else{?>
+ <?php }else{?>
          <h4>An error has occurred<?php echo $result ?> </h4>
       <?php }?>
        
      </div>
+
+    
+
+
+
+       
+      
+
+       
+
+      
+     

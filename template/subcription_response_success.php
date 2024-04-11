@@ -1,58 +1,111 @@
+
 <style>
       .ux_div {
-        padding: 100px 0;
+         padding: 60px 0 150px;
+        display: flex; 
+        justify-content: center;
       }
+      
+#head-ux-en .elementor-nav-menu__align-end .elementor-nav-menu ,#head-ux .elementor-nav-menu__align-end .elementor-nav-menu {    
+    display: none; 
+}
+#head-ux-en .elementor-widget-button .elementor-button ,#head-ux .elementor-widget-button .elementor-button {
+     display: none; 
+}
+.elementor-widget-button .elementor-button{
+     display: none; 
+}
+.elementor-location-footer .ux-footer{
+    display:none;
+}
+#head-ux-en .elementor-menu-toggle,#head-ux .elementor-menu-toggle{
+    display: none!important;
+}
+
+@media only screen and (max-width: 767px){
+    .ux_div {
+        padding: 30px 0 50px;
+    }
+}
         h1 {
         text-align: center;
-          color: #88B04B;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-weight: 800;
+          color: #000;
+          font-family:'Open Sans';
+          font-weight: 700;
           font-size: 30px;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
+        }
+        h6 {
+         text-align: center;
+          color: #000; 
+          font-weight: 400;
+          font-size: 16px;
+          margin-bottom: 20px;
         }
         p {
-          color: #404F5E;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-size:15px;
-          margin: 0;
+          color: #000;
+          font-family: 'Open Sans';
+          font-size:14px;
+          margin: 10px;
+          text-align: center;
+        }
+        ul {
+          color: #000;
+          font-family: 'Open Sans';
+          font-size:14px;
+          margin: 20px;
         }
       i {
         color: #9ABC66;
         font-size: 50px;
         line-height: 100px; 
       }
-      .card {
-        padding: 60px;
-    border-radius: 4px;
-    box-shadow: 0 2px 3px #d1ffd3;
-    display: inline-block;
-    margin: 0 auto;
-    background: #d3edeb;
+      .ux-card {
+         max-width: 600px;
       }
     </style>
  <div class="ux_div">
-      <div class="card">
-      <div style="border-radius:200px;height:100px;width:100px;display: flex;justify-content: center;background: #F8FAF5;margin:10px auto;">
-        <i class="checkmark">✓</i>
+      <div class="ux-card">
+      <div style="width: 150px;margin: 20px auto;">
+        <img src="<?php echo esc_url( UXP_DIR_URL .'assets/rocket-01.svg' ); ?>" >
       </div>
 
       <?php 
        $language = apply_filters( 'wpml_current_language', null );
+        
        if($language == 'fr'){ ?>
-         <h1><?php _e('Succès de paiement ','ux-autoaenroll')?></h1> 
-         <p> <?php _e('Félicitations ! Nous sommes ravis de vous informer que votre paiement a été effectué avec succès.','ux-autoaenroll') ?></p>
-         <p> <?php _e('L\'équipe uxpertise vous remercie d\'avoir choisi uxpertise LMS pour répondre à vos besoins. 
-            Nous avons le plaisir de vous accueillir officiellement sur votre plateforme dans les prochaines 24 à 48 heures ouvrables. Votre compte a été créé et est en cours de configuration, vous pourrez y accéder et profiter de toutes les fonctionnalités que nous offrons très bientôt! 
-            Vous recevrez prochainement un courriel de bienvenue contenant les détails de votre compte, ainsi que des instructions pour vous connecter à votre plateforme. Ce courriel vous permettra d\'accéder à votre espace personnel, où vous pourrez commencer à explorer notre plateforme et bénéficier des fonctionnalités qu\'offre uxpertise LMS.','ux-autoaenroll') ?>
-         </p>
+       
+             <h1><?php _e('Paiement complété','ux-autoaenroll')?></h1> 
+             <h6><?php _e('Félicitations!','ux-autoaenroll')?></h6>
+             <p> <?php _e('Nous sommes heureux de vous accueillir chez uxpertise. Voici les prochaines étapes:','ux-autoaenroll') ?></p>
+             <ul> 
+                 <li> <?php _e('Surveillez votre boite de réception, un courriel de bienvenue vous attend avec tout 
+                 ce qu’il vous faut pour préparer à lancer votre plateforme uxpertise LMS.','ux-autoaenroll') ?></li>
+                 <li> <?php _e('La création de votre plateforme est en cours! Dans les 24 à 48 heures ouvrables, 
+                 vous recevrez une notification par courriel afin d’accéder à votre plateforme uxpertise LMS.','ux-autoaenroll') ?></li>
+             </ul>
+             
         <?php }else{ ?>
-          <h1><?php _e('Payment success','ux-autoaenroll')?></h1> 
-         <p> <?php _e('Congratulations on your successful payment! We are delighted to inform you that your payment has been successfully processed.','ux-autoaenroll') ?></p>
-         <p> <?php _e('The uxpertise team thanks you for choosing uxpertise LMS to meet your needs.
-            We look forward to officially welcoming you to your platform within the next 24 to 48 business hours. Your account has been created and is in the process of being set up, so you\'ll be able to access it and take advantage of all the features we offer very soon! 
-            You will shortly receive a welcome e-mail containing your account details, as well as instructions on how to connect to your platform. This e-mail will give you access to your personal space, where you can start exploring our platform and benefiting from the features offered by uxpertise LMS.','ux-autoaenroll') ?>
-         </p>
+        
+             <h1><?php _e('Payment Completed','ux-autoaenroll')?></h1>  
+             <h6><?php _e('Congratulations!','ux-autoaenroll')?></h6>
+             <p> <?php _e('We are excited to welcome you to uxpertise. Here are the next steps:','ux-autoaenroll') ?></p>
+             <ul> 
+                 <li> <?php _e('Keep an eye on your inbox, a welcome email is waiting for you with everything you need to get started with uxpertise LMS.','ux-autoaenroll') ?></li>
+                 <li> <?php _e('The creation of your platform is underway! In the next 1-2 business days, you will receive an email notification to access your uxpertise LMS platform.','ux-autoaenroll') ?></li>
+             </ul>
 
-        <?php } ?>
+     <?php } ?>
       </div>
  </div>
+
+
+
+
+    
+
+
+   
+
+   
+   

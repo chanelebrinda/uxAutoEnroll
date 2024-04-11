@@ -1,60 +1,112 @@
+
 <style>
       .ux_div {
-        padding: 100px 0;
+        padding: 60px 0 150px;
+        display: flex; 
+        justify-content: center;
       }
+      
+#head-ux-en .elementor-nav-menu__align-end .elementor-nav-menu ,#head-ux .elementor-nav-menu__align-end .elementor-nav-menu {    
+    display: none; 
+}
+#head-ux-en .elementor-widget-button .elementor-button ,#head-ux .elementor-widget-button .elementor-button {
+     display: none; 
+}
+#head-ux-en .elementor-menu-toggle,#head-ux .elementor-menu-toggle{
+    display: none!important;
+}
+.elementor-widget-button .elementor-button{
+     display: none; 
+}
+.elementor-location-footer .ux-footer{
+    display:none;
+}
+@media only screen and (max-width: 767px){
+    .ux_div {
+        padding: 30px 0 50px;
+    }
+}
+
         h1 {
-          color: #ff3d00;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-weight: 800;
+        text-align: center;
+          color: #000;
+          font-family:'Open Sans';
+          font-weight: 700;
           font-size: 30px;
-          margin-bottom: 10px;
-          text-align: center;
+          margin-bottom: 20px;
+        }
+        h6 {
+         text-align: center;
+          color: #000; 
+          font-weight: 400;
+          font-size: 16px;
+          margin-bottom: 20px;
         }
         p {
-          color: #404F5E;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-size:15px;
-          margin: 0;
+          color: #000;
+          font-family: 'Open Sans';
+          font-size:14px;
+          margin: 10px;
+          text-align: center;
+        }
+        ul {
+          color: #000;
+          font-family: 'Open Sans';
+          font-size:14px;
+          margin: 20px;
         }
       i {
-        color: #ff3d00;
-    font-size: 80px;
-    line-height: 80px;
+        color: #9ABC66;
+        font-size: 50px;
+        line-height: 100px; 
       }
-      .card {
-        background: #ffeaea;
-      padding: 60px;
-      border-radius: 4px;
-      box-shadow: 0 2px 3px #ffded3;
-      display: inline-block;
-      margin: 0 auto;
-        }
+      .ux-card {
+         max-width: 600px;
+      }
+     
     </style>
- <div class="ux_div">
-      <div class="card">
-      <div style="border-radius:200px; height:100px;display: flex;
-    justify-content: center;width:100px; background: #F8FAF5; margin:10px auto;">
-        <i class="checkmark">&times;</i>
+  <div class="ux_div">
+      <div class="ux-card">
+      <div style="width: 150px;margin: 20px auto;">
+        <img src="<?php echo esc_url( UXP_DIR_URL .'assets/subscription_echec.png' ); ?>" >
       </div>
+
       <?php 
        $language = apply_filters( 'wpml_current_language', null );
+        
        if($language == 'fr'){ ?>
-        <h1><?php _e('Non succès de paiement ','ux-autoaenroll')?></h1> 
-        <p> <?php _e('Oops! Nous avons rencontré un problème lors du traitement de votre paiement. Malheureusement, il semblerait que votre transaction n\'ait pas été complétée. Veuillez choisir votre plan de prix et remplir le formulaire à nouveau.  ','ux-autoaenroll') ?>
-        </p>
-        <a href="https://staging.uxpertise.ca/page-tarification/" ><?php _e('Réessayer','ux-autoaenroll')?></a>
-        <p> <?php _e('Si vous avez rencontré des difficultés techniques ou si vous avez des questions concernant le processus de paiement, veuillez nous contacter sans hésitation. Notre équipe d\'assistance est là pour vous aider.  ','ux-autoaenroll') ?>
-        </p><a href="http://staging.uxpertise.ca/contact/" ><?php _e('Nous contacter','ux-autoaenroll')?> </a>
+       
+             <h1><?php _e('Paiement échoué','ux-autoaenroll') ?></h1> 
+             <p><?php _e('Oups! Un problème lors du traitement de votre paiement est survenu. Votre transaction n’a pas pu être conclue.','ux-autoaenroll')?></p>
+             <p> <?php _e('Veuillez choisir votre plan de prix et remplir le formulaire à nouveau ou contacter notre équipe de soutien si vous avez des questions concernant le processus de paiement.','ux-autoaenroll') ?></p>
+             <div class="ux-btn">
+                 <a class="ux-btn-primary" href="<?php echo esc_url(home_url()) ?>"><?php _e('Réesayer','ux-autoaenroll') ?></a>
+                 <a class="ux-btn-black" href="<?php echo esc_url(home_url('/contact')) ?>"> <?php _e('Nous contacter','ux-autoaenroll') ?></a>
+             </div>
+             
         <?php }else{ ?>
-
-          <h1><?php _e('Unsuccessful payment','ux-autoaenroll')?></h1> 
-        <p> <?php _e('Oops! We\'ve had a problem processing your payment. Unfortunately, it appears that your transaction was not completed. Please select your price plan and complete the form again.','ux-autoaenroll') ?>
-        </p>
-        <a href="https://staging.uxpertise.ca/page-tarification/" ><?php _e('Réessayer','ux-autoaenroll')?></a>
-        <p> <?php _e('If you have encountered any technical difficulties or have any questions regarding the payment process, please do not hesitate to contact us. Our support team is here to help you.  ','ux-autoaenroll') ?>
-        </p><a href="http://staging.uxpertise.ca/contact/" ><?php _e('Contact us','ux-autoaenroll')?> </a>
+        
+             <h1><?php _e('Payment failed','ux-autoaenroll')?></h1>  
+             <p><?php _e('Oups! An issue occurred while processing your payment. Your transaction was not completed.','ux-autoaenroll')?></p>
+             <p> <?php _e('Please select your pricing plan and fill out the form again. You can contact our team if you have any questions with regards to the payment process.','ux-autoaenroll') ?></p>
+             <div class="ux-btn">
+                 <a class="ux-btn-primary" href="<?php echo esc_url(home_url()) ?>"><?php _e('Try Again','ux-autoaenroll') ?></a>
+                 <a class="ux-btn-black" href="<?php echo esc_url(home_url('/contact')) ?>"> <?php _e('Contact Us','ux-autoaenroll') ?></a>
+             </div>
 
         <?php } ?>
       </div>
 
  </div>
+  
+
+
+
+
+   
+
+
+   
+
+
+   

@@ -67,8 +67,7 @@ require UXP_DIR_PATH.'includes/ajax.php';
 require UXP_DIR_PATH.'includes/table_create.php'; 
 require UXP_DIR_PATH.'includes/uxp_menu.php';
 
-uxp_create_table();  
-// die();
+
 /** 
  * Activation hook.
  */
@@ -152,10 +151,15 @@ function uxp_add_page($post_title,$post_name,$post_content,$parent_id =NULL){
         )
       );
       return $my_services;
-   
-  // }else{
-        // return ;
-  // }
- 
 
 }
+
+
+
+
+
+    
+
+
+
+   

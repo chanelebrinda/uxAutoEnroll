@@ -6209,7 +6209,7 @@ jQuery(document).ready(function ($) {
 
         localStorage.setItem("subcription", JSON.stringify(data));
     });
-    let language = $('.uxp_language').attr('value');
+    let language = $('#uxp_language').attr('value');
 
     let subcription = JSON.parse(localStorage.getItem("subcription"));
 
@@ -6488,12 +6488,14 @@ jQuery(document).ready(function ($) {
         let data1 = {
             'action': 'ajaxsubstriptioncheck',
             'country_id': $('#uxp_country option:selected').val(),
+             'language': $('#uxp_language').attr('value'),
         };
+        console.log(data1);
         jQuery.post(uxp_send_form.ajaxurl, data1, function (response) {
-
+console.log(response);
             $('.uxp_add_select').html(response);
              // CHANGER LE CONTENU DU SELECT EN FONCTION DE LA LANGUE
-             let langue = $('.uxp_language').attr('value');
+             let langue = $('#uxp_language').attr('value');
               if (langue === "fr") {
                   
                     $('#uxp_country option[value="244"]').text('États-Unis');
@@ -6616,15 +6618,16 @@ jQuery(document).ready(function ($) {
             'pricePlanId': subcription[0].plan_id,
             'paymentRecurrence': subcription[0].planrecurence,
             'currency': subcription[0].plancurrency,
+             'language': $('#uxp_language').attr('value'),
             
         };
-    
+    console.log(data);
         jQuery.post(uxp_send_form.ajaxurl, data, function (response) {
  
             myButton.removeClass('ux_loading');
 
             if (response.statut == 'success') {
-                let language = $('.uxp_language').attr('value');
+                let language = $('#uxp_language').attr('value');
                 if (language == "fr") {
 
                     if (!response.result == null) {
@@ -6686,42 +6689,42 @@ jQuery(document).ready(function ($) {
                         $('.ib_confirme').removeAttr("disabled");
 
                     } else {
-                        if (id_free == true) {
+                        // if (id_free == true) {
 
-                            Swal.fire({
-                                title: 'Thank you for filling in our form.',
-                                 iconHtml: '<img src="http://staging.uxpertise.ca/wp-content/uploads/2024/01/1_LMS.svg">',
-                                text: 'To finalize your free trial, please click on the link below to be redirected to our secure payment platform, Stripe. You will be asked to provide your credit card details, and rest assured that no charges will be made to your payment method until the end of the free trial and your confirmation, at which time you will have the option of modifying or cancelling your subscription free of charge.',
-                                showCancelButton: true,
-                                confirmButtonColor: '#6a4d93',
-                                cancelButtonColor: '#000',
-                                confirmButtonText: 'Finalize the trial',
-                                cancelButtonText: 'Cancel',
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location.href = response.result;
-                                }
-                            });
+                        //     Swal.fire({
+                        //         title: 'Thank you for filling in our form.',
+                        //          iconHtml: '<img src="http://staging.uxpertise.ca/wp-content/uploads/2024/01/1_LMS.svg">',
+                        //         text: 'To finalize your free trial, please click on the link below to be redirected to our secure payment platform, Stripe. You will be asked to provide your credit card details, and rest assured that no charges will be made to your payment method until the end of the free trial and your confirmation, at which time you will have the option of modifying or cancelling your subscription free of charge.',
+                        //         showCancelButton: true,
+                        //         confirmButtonColor: '#6a4d93',
+                        //         cancelButtonColor: '#000',
+                        //         confirmButtonText: 'Finalize the trial',
+                        //         cancelButtonText: 'Cancel',
+                        //     }).then((result) => {
+                        //         if (result.isConfirmed) {
+                        //             window.location.href = response.result;
+                        //         }
+                        //     });
 
-                        } else {
+                        // } else {
 
-                            Swal.fire({
-                                title: 'Proceed to Payment',
-                                iconHtml: '<img src="http://staging.uxpertise.ca/wp-content/uploads/2024/01/1_LMS.svg">',
-                                text: 'To complete your order, please proceed to the payment of your subscription.',
-                                showCancelButton: true,
-                                confirmButtonColor: '#6a4d93',
-                                cancelButtonColor: '#000',
-                                confirmButtonText: 'Proceed to payment',
-                                cancelButtonText: 'Cancel',
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location.href = response.result;
-                                }
-                            });
+                        //     Swal.fire({
+                        //         title: 'Proceed to Payment',
+                        //         iconHtml: '<img src="http://staging.uxpertise.ca/wp-content/uploads/2024/01/1_LMS.svg">',
+                        //         text: 'To complete your order, please proceed to the payment of your subscription.',
+                        //         showCancelButton: true,
+                        //         confirmButtonColor: '#6a4d93',
+                        //         cancelButtonColor: '#000',
+                        //         confirmButtonText: 'Proceed to payment',
+                        //         cancelButtonText: 'Cancel',
+                        //     }).then((result) => {
+                        //         if (result.isConfirmed) {
+                        //             window.location.href = response.result;
+                        //         }
+                        //     });
 
-                        }
-
+                        // }
+                        window.location.href = response.result;
                         $('.ib_confirme').removeAttr("disabled");
                     }
 
@@ -6729,7 +6732,7 @@ jQuery(document).ready(function ($) {
 
             } else {
 
-                let language = $('.uxp_language').attr('value');
+                let language = $('#uxp_language').attr('value');
                 if (language == "fr") {
 
                     Swal.fire(
@@ -6755,7 +6758,7 @@ jQuery(document).ready(function ($) {
     });
 
    // CHANGER LE CONTENU DU SELECT EN FONCTION DE LA LANGUE
-     let langue = $('.uxp_language').attr('value');
+     let langue = $('#uxp_language').attr('value');
       if (langue === "fr") {
           
             $('#uxp_country option[value="244"]').text('États-Unis');
@@ -6766,3 +6769,30 @@ jQuery(document).ready(function ($) {
         
 
 });
+
+
+
+
+       
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

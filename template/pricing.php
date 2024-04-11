@@ -1,11 +1,6 @@
 
 
-
-
-
- 
-
- <?php
+<?php
 
 $languageCode = 'fr';
 
@@ -138,26 +133,26 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
 <div class="wrapper">
 <div class="buttonWrapper">
   <div class="d-flex flex-row">
-    <div class="plans_type">
+    <div class="plans_type left">
       <?php _e('CAD','ux-autoaenroll') ?>
     </div>
     <label class="toggle">
       <input name="toggleswitch" id="toggleswitch" type="checkbox">
       <span class="roundbutton"></span>
     </label>
-    <div class="plans_type">
+    <div class="plans_type right">
       <?php _e('USD','ux-autoaenroll') ?>
     </div>
   </div>
   <div class="d-flex flex-row px-3">
-    <div class="plans_type">
+    <div class="plans_type left">
       <?php _e('Mois','ux-autoaenroll') ?>
     </div>
     <label class="toggle">
       <input id="toggleswitch" type="checkbox">
       <span class="roundbutton"></span>
     </label>
-    <div class="plans_type">
+    <div class="plans_type right">
       <?php _e('Année','ux-autoaenroll') ?>
     </div>
   </div>
@@ -193,7 +188,7 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
                   <?php  if($plan->isFreeTrialEnabled == true){ ?>
                     <div class="free">
                         <span class="ib_pricing__price_val">
-                          <?php _e( 'Gratuit','ux-autoaenroll') ?>
+                          <?php _e( '30 jours gratuit','ux-autoaenroll') ?>
                         </span>
                     </div>
                   <?php }else if($plan->isCustomPlan){?>
@@ -251,7 +246,7 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
                     data_plan_price="<?php esc_html_e(  $price->monthlyPrice) ?>"
                     date_recurence="0" method="post">
                     <button type="submit" class="btn submit_subcription_btn">
-                      <?php _e('S\'abonner','ux-autoaenroll') ?>
+                      <?php _e('M\'abonner','ux-autoaenroll') ?>
                     </button>
                   </form>
                   <?php  } ?>
@@ -314,7 +309,7 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
                   <?php  if($plan->isFreeTrialEnabled == true){ ?>
                     <div class="free">
                       <span class="ib_pricing__price_val">
-                        <?php _e( 'Gratuit','ux-autoaenroll') ?>
+                        <?php _e( '30 jours gratuit','ux-autoaenroll') ?>
                       </span>
                     </div>
                   <?php }else if($plan->isCustomPlan){?>
@@ -373,7 +368,7 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
                       data_plan_price="<?php esc_html_e( $price->annualPrice) ?>"
                       date_recurence="1" method="post">
                       <button type="submit" class="btn submit_subcription_btn">
-                        <?php _e('S\'abonner','ux-autoaenroll') ?>
+                        <?php _e('M\'abonner','ux-autoaenroll') ?>
                       </button>
                     </form>
                     <?php  } ?>
@@ -440,7 +435,7 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
                   <?php  if($plan->isFreeTrialEnabled == true){ ?>
                     <div class="free">
                       <span class="ib_pricing__price_val">
-                        <?php _e( 'Gratuit','ux-autoaenroll') ?>
+                        <?php _e( '30 jours gratuit','ux-autoaenroll') ?>
                       </span>
                     </div>
                   <?php }else if($plan->isCustomPlan){?>
@@ -496,7 +491,7 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
                       data_plan_price="<?php esc_html_e($price->monthlyPrice) ?>"
                       date_recurence="0" method="post">
                       <button type="submit" class="btn submit_subcription_btn">
-                        <?php _e('S\'abonner','ux-autoaenroll') ?>
+                        <?php _e('M\'abonner','ux-autoaenroll') ?>
                       </button>
                     </form>
                     <?php  } ?>
@@ -561,7 +556,7 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
                   <?php  if($plan->isFreeTrialEnabled == true){ ?>
                     <div class="free">
                         <span class="ib_pricing__price_val">
-                          <?php _e( 'Gratuit','ux-autoaenroll') ?>
+                          <?php _e( '30 jours gratuit','ux-autoaenroll') ?>
                         </span>
                     </div>
                   <?php }else if($plan->isCustomPlan){?> 
@@ -622,7 +617,7 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
                       data_plan_price="<?php esc_html_e( $price->annualPrice) ?>"
                       date_recurence="1" method="post">
                       <button type="submit" class="btn submit_subcription_btn">
-                        <?php _e('S\'abonner','ux-autoaenroll') ?>
+                        <?php _e('M\'abonner','ux-autoaenroll') ?>
                       </button>
                     </form>
                     <?php  } ?>
@@ -659,7 +654,6 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
   </div>
 </div>
 </div>
-
 <?php }else{?>
 <h4> Une erreur c'est produite
 <?php echo $result ?>
@@ -667,3 +661,14 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
 <?php }?>
 
 </div>
+
+
+
+  
+
+
+  
+
+  
+
+ 
